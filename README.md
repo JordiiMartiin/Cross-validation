@@ -1,2 +1,4 @@
 # Cross-validation
-Random Forest evaluated with 5-fold cross-validation to obtain a reliable mean accuracy.
+Cross-validation splits the dataset into K equally sized folds. The procedure runs for K iterations. In each iteration, one fold is used as the validation set and the remaining K−1 folds are used as the training set. The model is trained only on the K−1 training folds and evaluated on the held-out fold. Each fold serves once as the validation set. This produces K independent performance scores, whose mean and standard deviation provide an estimate of the model’s accuracy and stability.
+
+It mitigates overfitting because the model cannot memorize a single partition. An overfitted model performs well only on the subset it memorizes but fails on others. By evaluating it across K different validation folds, any partition-dependent behavior is exposed and penalized. The final selection therefore favors configurations that maintain stable performance across folds and demonstrate true generalization.
